@@ -1,0 +1,14 @@
+//
+// Created by arman on 2026-10-07.
+//
+
+#ifndef INC_1_UZDUOTIS_ATSISKAITYMUI_MAIN_H
+#define INC_1_UZDUOTIS_ATSISKAITYMUI_MAIN_H
+
+
+class Main
+{
+};
+
+
+#endif //INC_1_UZDUOTIS_ATSISKAITYMUI_MAIN_H
