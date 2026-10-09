@@ -11,17 +11,17 @@ int main()
 {
     cout << fixed << setprecision(2); // eilute dviem skaiciam po kablelio
 
-    double GBP_Bendras   = 0.8729;
-    double GBP_Pirkti    = 0.8600;
-    double GBP_Parduoti  = 0.9220;
+    const double GBP_Bendras   = 0.8729;
+    const double GBP_Pirkti    = 0.8600;
+    const double GBP_Parduoti  = 0.9220;
 
-    double USD_Bendras   = 1.1793;
-    double USD_Pirkti    = 1.1460;
-    double USD_Parduoti  = 1.2340;
+    const double USD_Bendras   = 1.1793;
+    const double USD_Pirkti    = 1.1460;
+    const double USD_Parduoti  = 1.2340;
 
-    double INR_Bendras   = 104.6918;
-    double INR_Pirkti    = 101.3862;
-    double INR_Parduoti  = 107.8546;
+    const double INR_Bendras   = 104.6918;
+    const double INR_Pirkti    = 101.3862;
+    const double INR_Parduoti  = 107.8546;
 
     int pasirinkimas = 0;
 
@@ -103,21 +103,21 @@ void ValiutosPardavimas(double USD, double GBP, double INR)
         if(valiuta == 1)
         {
             gaunamaSuma = valiutosSuma / USD;
-            cout<<"pasirinkta suma= "<<gaunamaSuma<<"USD"<<endl;
+            cout<<"pasirinkta suma= "<<valiutosSuma<<"USD"<<endl;
             cout<<"Parduodant " << valiutosSuma<< " USD gausi "<< gaunamaSuma<< " EUR" << endl;
             cout<<endl;
         }
         else if(valiuta == 2)
         {
             gaunamaSuma = valiutosSuma / GBP;
-            cout<<"pasirinkta suma= "<<gaunamaSuma<<"GBP"<<endl;
+            cout<<"pasirinkta suma= "<<valiutosSuma<<"GBP"<<endl;
             cout<<"Parduodant " << valiutosSuma<< " GBP gausi "<< gaunamaSuma<< " EUR" << endl;
             cout<<endl;
         }
         else if(valiuta == 3)
         {
             gaunamaSuma = valiutosSuma / INR;
-            cout<<"pasirinkta suma= "<<gaunamaSuma<<"INR"<<endl;
+            cout<<"pasirinkta suma= "<<valiutosSuma<<"INR"<<endl;
             cout<<"Parduodant " << valiutosSuma<< " INR gausi "<< gaunamaSuma<< " EUR" << endl;
             cout<<endl;
         }
@@ -142,13 +142,12 @@ void ValiutosPirkimas(double USD, double GBP, double INR)
     if(eurSuma < 1)
     {
         cout<<"Tai neigiamas skaicius"<<endl;
-        Menu();
     }
     else
     {
         if (valiuta == 1)
         {
-            cout<<"Musu pardavimo kursas yra 1EUR = "<<USD<<" USD"<<endl;
+            cout<<"Pirkimo kursas yra 1EUR = "<<USD<<" USD"<<endl;
             gaunamaSuma = eurSuma * USD;
             cout<<"pasirinkta suma="<<eurSuma<<"EUR"<<endl;
             cout<<"Uz "<<eurSuma<<"EUR Tu gausi: "<<gaunamaSuma<<" USD"<<endl;
@@ -157,7 +156,7 @@ void ValiutosPirkimas(double USD, double GBP, double INR)
         }
         else if (valiuta == 2)
         {
-            cout<<"Musu pardavimo kursas yra 1eur = "<<GBP<<" GBP"<<endl;
+            cout<<"Pirkimo kursas yra 1eur = "<<GBP<<" GBP"<<endl;
             gaunamaSuma = eurSuma * GBP;
             cout<<"pasirinkta suma="<<eurSuma<<"EUR"<<endl;
             cout<<"Uz "<<eurSuma<< "Eur tu gausi: "<<gaunamaSuma<<" GBP"<<endl;
@@ -166,7 +165,7 @@ void ValiutosPirkimas(double USD, double GBP, double INR)
         }
         else if (valiuta == 3)
         {
-            cout<<"Musu pardavimo kursas yra 1eur = "<<INR<<" INR" << endl;
+            cout<<"Pirkimo kursas yra 1eur = "<<INR<<" INR" << endl;
             gaunamaSuma = eurSuma * INR;
             cout<<"pasirinkta suma="<<eurSuma<<"EUR"<<endl;
             cout<<"Uz "<<eurSuma<<"Eur tu gausi: "<<gaunamaSuma<<" INR"<<endl;
@@ -191,17 +190,17 @@ void Palyginimas(double USD, double GBP, double INR)
     {
     case 1:
         cout << "1 EUR = " << USD << " USD" << endl;
-        cout<<endl;
+        cout << "1 USD = " << 1 / USD << " EUR" << endl;
         break;
 
     case 2:
         cout << "1 EUR = " << GBP << " GBP" << endl;
-        cout<<endl;
+        cout << "1 GBP = " << 1 / GBP << " EUR" << endl;
         break;
 
     case 3:
         cout << "1 EUR = " << INR << " INR" << endl;
-        cout<<endl;
+        cout << "1 INR = " << 1 / INR << " EUR" << endl;
         break;
     }
 }
